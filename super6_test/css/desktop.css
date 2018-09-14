@@ -1,9 +1,10 @@
 
- .container{
+ .container1{
 	max-width: 1366px;
 	/* 1366x768	16:9*/
 	margin:auto;
 }
+
 .burgerMenu, .mobH1{
 	display:none;
 }
@@ -12,23 +13,25 @@
     top: 0;
     left: 0;
     width: 100%;
+    
 }
-ul {
+.container2 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: transparent;
-    top: 70%;
+    top: 60%;
     left: 10%;
     font-size: 1.2em;
     position: absolute;
+    font-family: 'Fjalla One', sans-serif;
 }
-li {
+.container2 li {
     display: inline;
 }
 
-li a {
+.container2 li a {
     color: black;
     text-align: center;
     padding: 14px 16px;
@@ -37,10 +40,71 @@ li a {
 .welcome{
     top: 20px;
     left: 120px;
-    font-size: 5em;
+    font-size: 3em;
     position: absolute;
+    background-color: white;
+
 }
 .active{
     color: white;
     text-decoration: underline;
+}
+.container{
+	max-width: 1366px;
+	/* 1366x768	16:9*/
+	margin:auto;
+}
+@media (min-width: 601px) and (max-width: 1122px) {
+	 
+	.games {
+		  justify-content: space-between; 
+        flex-basis: 50%;
+        } 
+        
+}
+
+body{
+    font-family: 'Mukta', sans-serif;
+    margin: 0 auto;
+}
+
+.container {
+    margin: 10px 40px;
+}
+.games{
+    border: 1px solid black;
+    border-radius: 4px;
+     width: 100%; 
+    flex-wrap: wrap;   
+ 
+}
+
+.gameInfo{
+    font-size: 10px;
+    text-align: center;
+    background-color: grey;
+    height: 100%;
+    padding: 10px 0px;
+    margin-bottom: 15px
+}
+
+.matchup{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+   
+}
+
+.score{
+    width: 50px;
+}
+
+.stats{
+    text-align: center;
+    
+}
+.statDetails{
+    text-align: left;
+    font-size: 12px;
+    display: none;
 }
