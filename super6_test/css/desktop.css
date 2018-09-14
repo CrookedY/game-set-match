@@ -1,0 +1,46 @@
+
+ .container{
+	max-width: 1366px;
+	/* 1366x768	16:9*/
+	margin:auto;
+}
+.burgerMenu, .mobH1{
+	display:none;
+}
+ header {
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+    top: 70%;
+    left: 10%;
+    font-size: 1.2em;
+    position: absolute;
+}
+li {
+    display: inline;
+}
+
+li a {
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.welcome{
+    top: 20px;
+    left: 120px;
+    font-size: 5em;
+    position: absolute;
+}
+.active{
+    color: white;
+    text-decoration: underline;
+}
