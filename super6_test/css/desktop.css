@@ -1,8 +1,11 @@
-
- .container1{
+.container1{
 	max-width: 1366px;
 	/* 1366x768	16:9*/
 	margin:auto;
+}
+.container2{
+    width: 100%;
+    margin: auto;
 }
 
 .burgerMenu, .mobH1{
@@ -15,6 +18,17 @@
     width: 100%;
     
 }
+.banner{
+	background-repeat: no-repeat;
+    height:200px;
+    display: flex;
+    width:100%
+}
+.banner h2{
+	top:20px;
+	left:120px;
+	font-size: 2em;
+}
 .container2 ul {
     list-style-type: none;
     margin: 0;
@@ -25,23 +39,36 @@
     left: 10%;
     font-size: 1.2em;
     font-family: 'Fjalla One', sans-serif;
+    position: relative;
+    /* margin-left: auto;
+    margin-right: auto; */
 }
-.container2 li {
-    display: inline;
+.searchItem{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 80%;
+}
+.container2 ul li {
+    display: inline-block;
+    list-style: none;
+    height: 100%;
 }
 
 .container2 li a {
+    display: flex;
     color: black;
     text-align: center;
-    padding: 14px 16px;
+    padding: 10px 50px;
     text-decoration: none;
+}
+.container2 li a:hover{
+    background-color:gray;
 }
 .welcome{
     top: 20px;
     left: 120px;
-    font-size: 3em;
-    position: absolute;
-    background-color: white;
+    font-family: 'Times New Roman', Times, serif;
+    position: fixed;
+    background-color:transparent;
 
 }
 .active{
@@ -49,24 +76,27 @@
     text-decoration: underline;
 }
 
+
+
+/*Steves*/
 body{
     font-family: 'Mukta', sans-serif;
     margin: 0 auto;
 }
-
 .container {
     margin: 10px 40px;
-    display: block;
+    display: flex;
     flex-direction: column;
+    
 }
 .games{
     border: 1px solid black;
     border-radius: 4px;
     margin-bottom: 20px;
     width: 100%;
+    max-width: 480px;
     
 }
-
 .gameInfo{
     font-size: 10px;
     text-align: center;
@@ -75,18 +105,18 @@ body{
     padding: 10px 0px;
     margin-bottom: 15px
 }
-
 .matchup{
     display: flex;
     justify-content: space-between;
     padding: 20px 20px;
-   
+   align-items: center;
 }
-
 .score{
     width: 50px;
 }
-
+.vs{
+    font-size: 10px;
+}
 .stats{
     text-align: center;
     
@@ -96,14 +126,20 @@ body{
     font-size: 12px;
     display: none;
 }
-
+.dblLabel{
+    font-size: 8px;
+}
+.doublePts{
+    display: block;
+}
 @media (min-width: 740px) {
-	 
-	.container {
-		justify-content: space-between;
-        display: flex; 
+     
+    .container {
+        justify-content: space-evenly;
+        
         flex-direction: row;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
+        
          
     } 
     .games{
