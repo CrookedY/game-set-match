@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Super-6</title>
-    <link rel="stylesheet" media="only screen and (min-width : 600px)" href="css/desktop.css">
+    <!-- <link rel="stylesheet" href="css/mobile.css"> -->
+    <link rel="stylesheet" media="only screen" href="css/desktop.css">
 </head>
 <body>
     <header>
@@ -31,10 +32,9 @@
                     <li class="active"><a href="">Play Super 6</a></li>
                     <li><a href="">Leaderboard</a></li>
                     <li><a href="">Results</a></li>
-                    <li><a href="">Head to Head</a></li>
-                    <li><a href="">Leagues</a></li>
-                    <li><a href="">Pundits</a></li>
                     <li><a href="">Feedback</a></li>
+                    <li class="searchItem"><form action="">Search:<input type="search" placeholder="Search"></form></li>
+
                 </ul>
             </nav>
          </div>
@@ -50,6 +50,10 @@
                     <span>Vs</span>
                     <input type="number" class="score" id="score2" min=0 max=5>
                     <span>Team2</span>
+                    <div>
+                        <label class = "dblLabel">Double</label>
+                        <input type = "radio" name = "doublePts" id = "game1Dbl">
+                    </div>
                 </div>
     
                 <div class="stats">
@@ -60,8 +64,6 @@
                         <li>Stat3</li>
                     </ul>
                 </div>
-    
-    
             </section>
              
              <section class="games" id="game2">
@@ -73,7 +75,11 @@
                     <span>Vs</span>
                     <input type="number" class="score" id="score4" min=0 max=5>
                     <span>Team2</span>
+                <div>
+                    <label class = "dblLabel">Double</label>
+                    <input type = "radio" name = "doublePts" id = "game2Dbl">
                 </div>
+            </div>
     
                 <div class="stats">
                     <button id="stats2Button">Stats</button>
@@ -84,11 +90,104 @@
                     </ul>
                 </div>
     
+                
+            </section>
+            <section class="games" id="game3">
+                <div class="gameInfo" id="game3Info">Saturday 8th September 2018, 3:00pm</div>
+                <div class="matchup">
+                    <span>Team5</span>
+                    <input type="number" class="score" id="score5" min=0 max=5>
+                    <span class = "vs">Vs</span>
+                    <input type="number" class="score" id="score6" min=0 max=5>
+                    <span>Team6</span>
+                    <div>
+                        <label class = "dblLabel">Double</label>
+                        <input type = "radio" name = "doublePts" id = "game3Dbl"> 
+                    </div>
+                </div>
+                <div class="stats">
+                    <button id="stats3Button">Stats</button>
+                    <ul class="statDetails" id="stats3Details">
+                        <li>Stat1</li>
+                        <li>Stat2</li>
+                        <li>Stat3</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="games" id="game4">
+                <div class="gameInfo" id="game4Info">Saturday 8th September 2018, 3:00pm</div>
+                <div class="matchup">
+                    <span>Team7</span>
+                    <input type="number" class="score" id="score7" min=0 max=5>
+                    <span class = "vs">Vs</span>
+                    <input type="number" class="score" id="score8" min=0 max=5>
+                    <span>Team8</span>
+                    <div>
+                        <label class = "dblLabel">Double</label>
+                        <input type = "radio" name = "doublePts" id = "game4Dbl"> 
+                    </div>
+                </div>
+                <div class="stats">
+                    <button id="stats4Button">Stats</button>
+                    <ul class="statDetails" id="stats4Details">
+                        <li>Stat1</li>
+                        <li>Stat2</li>
+                        <li>Stat3</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="games" id="game5">
+                <div class="gameInfo" id="game5Info">Saturday 8th September 2018, 3:00pm</div>
     
+                <div class="matchup">
+                    <span>Team9</span>
+                    <input type="number" class="score" id="score9" min=0 max=5>
+                    <span class = "vs">Vs</span>
+                    <input type="number" class="score" id="score10" min=0 max=5>
+                    <span>Team10</span>
+                    <div>
+                        <label class = "dblLabel">Double</label>
+                        <input type = "radio" name = "doublePts" id = "game5Dbl"> 
+                    </div>
+                </div>
+    
+                <div class="stats">
+                    <button id="stats5Button">Stats</button>
+                    <ul class="statDetails" id="stats5Details">
+                        <li>Stat1</li>
+                        <li>Stat2</li>
+                        <li>Stat3</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="games" id="game6">
+                <div class="gameInfo" id="game6Info">Saturday 8th September 2018, 3:00pm</div>
+    
+                <div class="matchup">
+                    <span>Team11</span>
+                    <input type="number" class="score" id="score11" min=0 max=5>
+                    <span class = "vs">Vs</span>
+                    <input type="number" class="score" id="score12" min=0 max=5>
+                    <span>Team12</span>
+                    <div>
+                        <label class = "dblLabel">Double</label>
+                        <input type = "radio" name = "doublePts" id = "game6Dbl"> 
+                    </div>
+                </div>
+    
+                <div class="stats">
+                    <button id="stats6Button">Stats</button>
+                    <ul class="statDetails" id="stats6Details">
+                        <li>Stat1</li>
+                        <li>Stat2</li>
+                        <li>Stat3</li>
+                    </ul>
+                </div>
             </section>
     
     </header>
 
-    <script src="prediction.js"></script>
+    <script src="js/predictions.js"></script>
+    <!-- <script src="js/main.js"></script> -->
 </body>
 </html>
