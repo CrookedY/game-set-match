@@ -1,0 +1,268 @@
+/* body{
+    font-family: "Gill Sans", "Gill Sans MT", Helvetica, Arial, "sans- serif";
+    padding:0;
+    margin:0; }
+
+
+.container2{
+    width:100%;
+}
+header{
+    background-color:transparent;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #488D83;
+}
+.content{
+    margin:5px;
+}
+nav{
+    display: none;
+}
+nav ul{
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+}
+nav ul li{
+    border-bottom:1px solid #ccc;
+    padding:5px;
+}
+nav ul li a{
+    display:inline-block;
+    width:100%;
+    color: black;
+    text-decoration: none;
+}
+.banner{
+    height: 120px;
+    background-repeat: no-repeat;
+}
+.mobH1{
+    padding:10px;
+    font-size:1.2rem;
+    color: #DDEAF2;
+}
+.bars{
+    float:left;
+    }
+.bar1, .bar2, .bar3 {
+    width: 24px;
+    height: 4px;
+    background-color: #DDEAF2;
+    margin: 6px 0;
+    }
+.menuLabel{
+    color:#DDEAF2;
+    float:left;
+    position: relative;
+    top: 8px;
+    left: -5px;
+}
+.burgerMenu {
+    display: inline-block;
+    cursor: pointer;
+    float:right;
+    padding: 4px;
+}
+.games{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.container{
+    padding: 5px;
+    width: 50%;
+    box-sizing: border-box;
+}
+.banner h2{
+    color: #000000;
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    font-weight: 100;
+    font-size: 2em;
+    padding: 0;
+    margin: 0; 
+}
+
+
+
+
+/* Steven's */
+/*body{
+    font-family: 'Mukta', sans-serif;
+    margin: 0 auto;
+}
+.container {
+    margin: 10px 40px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.games{
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    width: 105%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+}
+.gameInfo{
+    font-size: 10px;
+    width: 100%;
+    text-align: center;
+    background-color: grey;
+    padding: 10px 0px;
+    margin-bottom: 15px
+}
+.matchup{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+    align-items: center;
+}
+.score{
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 50px;
+}
+.vs{
+    font-size: 10px;
+}
+.stats{
+    text-align: center;
+    border: 1px solid black;
+    background-color: grey;
+}
+.statDetails{
+    text-align: left;
+    font-size: 12px;
+    display: none;
+}
+.dblLabel{
+    font-size: 8px;
+    padding-left: 10px;
+}
+.doublePts{
+    display: block;
+}
+
+#submitDiv{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+#submit{
+    
+}
+
+@media (min-width: 740px) {
+     
+    .container {
+        justify-content: space-evenly;
+        
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+         
+    } 
+    .games{
+        margin-right: 10px;
+    }
+        
+}  */
+
+body{
+    font-family: "Gill Sans", "Gill Sans MT", Helvetica, Arial, "sans- serif";
+    padding:0;
+    margin:0; }
+    .container{
+    width:100%;
+}
+header{
+    background-color:lightgrey;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #488D83;
+}
+.content{
+      margin:5px;
+}
+nav ul{
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+.searchItem{
+    order: -1; 
+}
+nav ul li{
+    border-bottom:1px solid #ccc;
+    padding:5px;
+}
+nav ul li a{
+    display:inline-block;
+    width:100%;
+    color: #000000;
+    text-decoration: none;
+}
+.banner{
+    background-repeat: no-repeat;
+    height: 120px;
+}
+.mobH1{
+    padding:10px;
+    font-size:1.2rem;
+    color: #DDEAF2;
+}
+.bars{
+    float:left;
+}
+.bar1, .bar2, .bar3 {
+    width: 24px;
+    height: 4px;
+    background-color: #DDEAF2;
+    margin: 6px 0;
+}
+.menuLabel{
+    color:#DDEAF2;
+    float:left;
+    position: relative;
+    top: 8px;
+    left: -5px;
+}
+.burgerMenu {
+    display: inline-block;
+    cursor: pointer;
+    float:right;
+    padding: 4px;
+}
+.main{
+    display: flex;
+    flex-wrap: wrap;
+}
+.games{
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.matchup{
+    width: 100%;
+    border: 1px solid #ccc;
+}
+.banner h2{
+    color: #DDEAF2;
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    font-weight: 100;
+    font-size: 2em;
+    padding: 0;
+    margin: 0; 
+}
