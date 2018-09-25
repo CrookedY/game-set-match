@@ -62,8 +62,10 @@ class Forms extends Component {
                     <div className="matchup">
                         <span className="name" id={"team" + (this.props.value * 2 - 1) + "Name"}>Team {this.props.value * 2 - 1}</span>
                         <input type="number" className="score" id={"score" + (this.props.value * 2 - 1)} min={0} max={5}></input>
+                        <label className='showPrediction' id={"showPredictionGame"+(this.props.value)+"_1"}></label>
                         <span className='vs'>Vs</span>
-                        <input type="number" className="score" id={"score" + this.props.value * 2} min={0} max={5} disabled={true}></input>
+                        <input type="number" className="score" id={"score" + this.props.value * 2} min={0} max={5}></input>
+                        <label className='showPrediction' id={"showPredictionGame"+this.props.value+"_2"}></label>
                         <span className="name" id={"team" + this.props.value * 2 + "Name"}>Team {this.props.value * 2}</span>
                         <div>
                             <label className="dblLabel">Double</label>

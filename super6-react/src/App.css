@@ -111,7 +111,7 @@ body{
 }
 .matchup{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 20px 20px;
    align-items: center;
 }
@@ -140,7 +140,7 @@ body{
     display: block;
 }
 
-#submitDiv{
+#submitDiv, #editDiv{
     width: 100%;
     display: flex;
     justify-content: center;
