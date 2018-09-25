@@ -6,32 +6,32 @@ export const sendScores = function () {
     //used to hide prediction input after submit clicked
     for (let el of document.querySelectorAll('.score')) el.style.visibility = 'hidden';
 
-    fetch('/api/getPredictions', {
-        method: 'get',
-    })
-    .then(function (response) {
-        return response.json()
-    })
-        .then(function (myData) {
+    // fetch('/api/getPredictions', {
+    //     method: 'get',
+    // })
+    // .then(function (response) {
+    //     return response.json()
+    // })
+    //     .then(function (myData) {
 
-            document.getElementById('showPredictionGame1_1').innerHTML = myData[myData.length - 1].game1H
-            document.getElementById('showPredictionGame1_2').innerHTML = myData[myData.length - 1].game1A
+    //         document.getElementById('showPredictionGame1_1').innerHTML = myData[myData.length - 1].game1H
+    //         document.getElementById('showPredictionGame1_2').innerHTML = myData[myData.length - 1].game1A
 
-            document.getElementById('showPredictionGame2_1').innerHTML = myData[myData.length - 1].game2H
-            document.getElementById('showPredictionGame2_2').innerHTML = myData[myData.length - 1].game2A
+    //         document.getElementById('showPredictionGame2_1').innerHTML = myData[myData.length - 1].game2H
+    //         document.getElementById('showPredictionGame2_2').innerHTML = myData[myData.length - 1].game2A
 
-            document.getElementById('showPredictionGame3_1').innerHTML = myData[myData.length - 1].game3H
-            document.getElementById('showPredictionGame3_2').innerHTML = myData[myData.length - 1].game3A
+    //         document.getElementById('showPredictionGame3_1').innerHTML = myData[myData.length - 1].game3H
+    //         document.getElementById('showPredictionGame3_2').innerHTML = myData[myData.length - 1].game3A
 
-            document.getElementById('showPredictionGame4_1').innerHTML = myData[myData.length - 1].game4H
-            document.getElementById('showPredictionGame4_2').innerHTML = myData[myData.length - 1].game4A
+    //         document.getElementById('showPredictionGame4_1').innerHTML = myData[myData.length - 1].game4H
+    //         document.getElementById('showPredictionGame4_2').innerHTML = myData[myData.length - 1].game4A
 
-            document.getElementById('showPredictionGame5_1').innerHTML = myData[myData.length - 1].game5H
-            document.getElementById('showPredictionGame5_2').innerHTML = myData[myData.length - 1].game5A
+    //         document.getElementById('showPredictionGame5_1').innerHTML = myData[myData.length - 1].game5H
+    //         document.getElementById('showPredictionGame5_2').innerHTML = myData[myData.length - 1].game5A
 
-            document.getElementById('showPredictionGame6_1').innerHTML = myData[myData.length - 1].game6H
-            document.getElementById('showPredictionGame6_2').innerHTML = myData[myData.length - 1].game6A
-        })
+    //         document.getElementById('showPredictionGame6_1').innerHTML = myData[myData.length - 1].game6H
+    //         document.getElementById('showPredictionGame6_2').innerHTML = myData[myData.length - 1].game6A
+    //     })
 
 
     let game1ScH = document.getElementById('score1').value
@@ -77,4 +77,34 @@ export const sendScores = function () {
         })
 
         document.getElementById('editButton').style.visibility = 'visible';
-}
+
+  fetch('/api/getPredictions', {
+        method: 'get',
+    })
+    .then(function (response) {
+        console.log('first promise')
+        return response.json()
+        
+    })
+        .then(function (myData) {
+            console.log('second promise')
+            console.log(myData)
+            document.getElementById('showPredictionGame1_1').innerHTML = myData[myData.length - 1].game1H
+            document.getElementById('showPredictionGame1_2').innerHTML = myData[myData.length - 1].game1A
+
+            document.getElementById('showPredictionGame2_1').innerHTML = myData[myData.length - 1].game2H
+            document.getElementById('showPredictionGame2_2').innerHTML = myData[myData.length - 1].game2A
+
+            document.getElementById('showPredictionGame3_1').innerHTML = myData[myData.length - 1].game3H
+            document.getElementById('showPredictionGame3_2').innerHTML = myData[myData.length - 1].game3A
+
+            document.getElementById('showPredictionGame4_1').innerHTML = myData[myData.length - 1].game4H
+            document.getElementById('showPredictionGame4_2').innerHTML = myData[myData.length - 1].game4A
+
+            document.getElementById('showPredictionGame5_1').innerHTML = myData[myData.length - 1].game5H
+            document.getElementById('showPredictionGame5_2').innerHTML = myData[myData.length - 1].game5A
+
+            document.getElementById('showPredictionGame6_1').innerHTML = myData[myData.length - 1].game6H
+            document.getElementById('showPredictionGame6_2').innerHTML = myData[myData.length - 1].game6A
+        })
+    }
