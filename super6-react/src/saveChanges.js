@@ -1,7 +1,8 @@
-export const sendScores = function () {
+
+export const saveChanges = function () {
 
     //used to hide the submit button after clicked
-    document.getElementById('submit').style.visibility = 'hidden'
+    document.getElementById('saveChanges').style.visibility = 'hidden'
 
     //used to hide prediction input after submit clicked
     for (let el of document.querySelectorAll('.score')) el.style.visibility = 'hidden';
@@ -62,11 +63,12 @@ export const sendScores = function () {
         "game6H": parseInt(game6ScH, 10),
         "game6A": parseInt(game6ScA, 10)
     }
+    console.log(formData)
 
-    let endPoint = "/api/predictions";
+    let endPoint = "/api/editPredictions";
 
     fetch(endPoint, {
-        method: 'post',
+        method: 'put',
         body: JSON.stringify(formData),
         headers: {
             'Content-Type': 'application/json'
@@ -76,5 +78,4 @@ export const sendScores = function () {
             return response.json()
         })
 
-        document.getElementById('editButton').style.visibility = 'visible';
 }

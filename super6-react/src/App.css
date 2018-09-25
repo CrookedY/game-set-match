@@ -140,7 +140,7 @@ body{
     display: block;
 }
 
-#submitDiv, #editDiv{
+#submitDiv, #editDiv, #saveChanges{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -151,6 +151,13 @@ body{
   width:100%;
   background-repeat: no-repeat;
   height:200px;
+}
+
+#saveChanges{
+    visibility: hidden;
+}
+#editButton{
+    visibility: hidden;
 }
 
 

@@ -1,7 +1,9 @@
+
+
 export const editScores = function () {
 
     for (let el of document.querySelectorAll('.score')) el.style.visibility = 'visible';
-    document.getElementById('submit').style.visibility = 'visible';
+    document.getElementById('saveChanges').style.visibility = 'visible';
 
     document.getElementById('showPredictionGame1_1').innerHTML = ""
     document.getElementById('showPredictionGame1_2').innerHTML = ""
@@ -20,4 +22,6 @@ export const editScores = function () {
 
     document.getElementById('showPredictionGame6_1').innerHTML = ""
     document.getElementById('showPredictionGame6_2').innerHTML = ""
+
+
 }

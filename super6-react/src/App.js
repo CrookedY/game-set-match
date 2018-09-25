@@ -5,6 +5,7 @@ import {Container, Col, Row } from 'react-grid-system'
 import './App.css';
 import {sendScores} from './sendScores.js';
 import {editScores} from './editScores.js';
+import {saveChanges} from './saveChanges.js';
 
 
 class App extends Component {
@@ -25,6 +26,10 @@ handleSubmit(){
 
 handleEdit(){
   editScores()
+}
+
+handleChanges(){
+  saveChanges()
 }
 
   render() {
@@ -54,6 +59,11 @@ handleEdit(){
         <div id="submitDiv">
             <p>
                 <button type="submit" id="submit" onClick={this.handleSubmit}>Submit</button>
+            </p>
+        </div>
+        <div id="changesDiv">
+            <p>
+                <button type="submit" id="saveChanges" onClick={this.handleChanges}>Save Changes</button>
             </p>
         </div>
       
