@@ -1,0 +1,20 @@
+[{
+    "user":"user1",
+    "name": "fred",
+    "score": 345
+}, {
+    "user":"user2",
+    "name": "Laura",
+    "score": 365
+},
+{
+    "user":"user3",
+    "name": "Bob",
+    "score": 32
+},
+{
+    "user":"user4",
+    "name": "Janet",
+    "score": 345
+}
+]

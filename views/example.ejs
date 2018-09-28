@@ -4,27 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" media="only screen" href="../css/desktop.css">
+    <title>Leaderboard</title>
 </head>
 <body>
-    <div class="container">
-        <h1><%=heading%></h1>
+    <header>
+            <div class="burgerMenu">
+                    <div class="menuLabel">Menu</div>
+                    <div class="bars">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+                 </div>
+                 <div class="container1">
+                    <div class="banner">
+                        <img class="bannerImg" src="../images/tennisbanner.jpg" alt="tennis", style="width:100%", style="background-repeat: no-repeat"
+                        , style="height:200px">
+                        <h2 class="welcome">Tennis Super 6</h2>
+                    </div>
+                </div>
+                 <div class="container2">
+                    <h1 class="mobH1">Super6</h1>
+                    <nav>
+                        <ul>
+                            <li class="active"><a href="">Play Super 6</a></li>
+                            <li><a href="">Leaderboard</a></li>
+                            <li><a href="">Results</a></li>
+                            <li><a href="">Feedback</a></li>
+                            <li class="searchItem"><form action="">Search:<input type="search" placeholder="Search"></form></li>
+                        </ul>
+                    </nav>
+                 </div>
+    </header>
+    <div class="Board">
+        <h1 id="leadHeading"><%=heading%></h1>
         <p><%=msg%></p>
 
-        <ul>
-            <%myArray.forEach(function(item){%>
-            <li><%= item %></li>
-        <%})%>
+        <div class = "tableLB">
+            <table>
+                <tr>
+                <td class= "header">Position</td>
+                <td class= "header">Name</td>
+                <td class= "header">Points</td>
+                </tr>
+                
+                <% results.forEach(function (data) { %>
+                    <tr>
+                        <td><%=data.rank %></td>
+                        <td><%= data.name %></td>
+                        <td><%= data.score %></td>
+                    </tr>
+                    
+                <% }) %>
 
-        </ul>
-        <ul>
-                <%arrayOfObj.forEach(function(staff){%>
-            <li><%=staff.name%> <%=staff.pet%></li>
-            <%})%>
-        </ul>
+            </div>
+    
 
 
         
     </div>
+
 </body>
 </html>
