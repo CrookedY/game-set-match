@@ -6,6 +6,10 @@ import './App.css';
 import {sendScores} from './sendScores.js';
 import {editScores} from './editScores.js';
 import {saveChanges} from './saveChanges.js';
+// import Login from './Login.js';
+// import {identifyUser} from './identifyUser.js'
+// import LoginControl from './UserGreeting.js'
+
 
 
 class App extends Component {
@@ -20,6 +24,9 @@ class App extends Component {
     this.setState({ radioChecked: newRadio })
   }
 
+// handleUserID(){
+//   identifyUser()
+// }
 handleSubmit(){
   sendScores()
 }
@@ -38,8 +45,12 @@ handleChanges(){
 
     return (
       <div className="App">
+       {/* <Login/>
+       <LoginControl/>
+       <div id="userIdentification">
+        <button type="submit" id="submitLogin" onClick={this.handleUserID}>Log In</button>
+        </div> */}
         <Header />
-        
         <Container>
           <Row>
             <Col md={12} lg={6}>
