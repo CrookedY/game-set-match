@@ -1,0 +1,43 @@
+[
+{
+    "GameID": 1,
+    "PlayerHome": "Roger Federer",
+    "PlayerAway":"Rafael Nadal",
+    "Gender":"M"
+},
+{
+    "GameID": 2,
+    "PlayerHome": "Novak Djokovic",
+    "PlayerAway":"Andy Murray",
+    "Gender":"M"
+},
+
+{
+    "GameID": 3,
+    "PlayerHome": "Andre Agassi",
+    "PlayerAway":"Pete Sampras",
+    "Gender":"M"
+},
+
+{
+    "GameID": 4,
+    "PlayerHome": "Serena Williams",
+    "PlayerAway":"Simona Halep",
+    "Gender":"F"
+},
+
+{
+    "GameID": 5,
+    "PlayerHome": "Caroline Wozniacki",
+    "PlayerAway":"Angelique Kerber",
+    "Gender":"F"
+},
+
+{
+    "GameID": 6,
+    "PlayerHome": "Stefi Graff",
+    "PlayerAway":"Billie-Jean King",
+    "Gender":"F"
+}
+
+]
