@@ -1,16 +1,56 @@
-var express = require ('express');
+// var express = require('express');
+// var fs = require('fs');
+// var path = require('path');
+// var app = express();
+// var routes = require('./routes/routes');
+
+// app.use(express.json());
+// app.use(express.urlencoded({extended: false}))
+// app.use(express.static("./super6_test"));
+
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'ejs');
+
+// routes(app)
+
+// var MongoClient = require('mongodb').MongoClient
+
+// MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true }, function (err, client) {
+
+// app.set('myDb', client.db('gameDataDb'));
+
+// })
+
+// app.listen(3000)
+
+var express = require('express');
 var fs = require('fs');
 var path = require ('path')
 var app = express();
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.use(express.json());
+app.use(express.urlencoded({extended: false}))
 
-app.get("/example", function(req, res){
+app.use(express.static("./super6_test"));
+app.use(express.static('views'));
+app.use(express.static("./super6-react/build"));
+
+
+routes(app)
+
+var MongoClient = require('mongodb').MongoClient
+
+MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true }, function (err, client) {
+
+app.set('myDb', client.db('gameDataDb'));
+
+})
+
+
+/*app.get("/leaderBoard", function(req,res){
     res.render('example', {
         heading: 'LeaderBoard',
         msg:'The Current Winners are',
-        myArray:['red', 'yellow', 'green', 'blue'],
         Leaderboard: [{
             "name": "fred",
             "score": 345
@@ -27,7 +67,8 @@ app.get("/example", function(req, res){
             "score": 345
         }
     ]
+
     })
-})
+})*/
 
 app.listen(3000)
