@@ -23,7 +23,8 @@ module.exports = {
                 rank++;
                 doc.rank = rank;
     });
-            res.render('example', { 'heading': "Top 20 Leaderboard", 'msg': '', "results": docs });
+    res.json(docs)
+        //     res.render('example', { 'heading': "Top 20 Leaderboard", 'msg': '', "results": docs });
         })
     },
 
