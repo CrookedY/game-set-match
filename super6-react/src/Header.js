@@ -16,7 +16,6 @@ class Header extends Component {
                     </div>
                     <div className="container1">
                         <div className="banner">
-                            <img className="bannerImg" src={"../images/tennisbanner.jpg"} alt="tennis"></img>
                             <h2 className="welcome">Tennis Super 6</h2>
                         </div>
                     </div>

@@ -3,6 +3,7 @@ import Header from './Header.js'
 import Forms from './Forms.js'
 import {Container, Col, Row } from 'react-grid-system'
 import './App.css';
+import './mobile.css';
 import {sendScores} from './sendScores.js';
 import {editScores} from './editScores.js';
 import {saveChanges} from './saveChanges.js';

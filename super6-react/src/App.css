@@ -1,4 +1,4 @@
-
+@media (min-width: 600px) {
 .container1{
 	max-width: 1366px;
 	/* 1366x768	16:9*/
@@ -23,6 +23,7 @@
     
 }
 .banner{
+    background-image: url(./tennisbanner.jpg);
 	background-repeat: no-repeat;
     height:200px;
     display: flex;
@@ -79,7 +80,7 @@
     color: white;
     text-decoration: underline;
 }
-
+}
 
 
 /*Steves*/
@@ -162,7 +163,7 @@ body{
 
 
 
-@media (min-width: 740px) {
+
     
     
     .container {
@@ -177,4 +178,3 @@ body{
         margin-right: 10px;
     }
         
-}
