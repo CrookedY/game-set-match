@@ -6,6 +6,7 @@ import './App.css';
 import {sendScores} from './sendScores.js';
 import {editScores} from './editScores.js';
 import {saveChanges} from './saveChanges.js';
+import Leaderboard from './Leaderboard.js';
 // import Login from './Login.js';
 // import {identifyUser} from './identifyUser.js'
 // import LoginControl from './UserGreeting.js'
@@ -66,6 +67,8 @@ handleChanges(){
             </Col>
           </Row>
         </Container>
+
+        <Leaderboard/>
       
         <div id="submitDiv">
             <p>
