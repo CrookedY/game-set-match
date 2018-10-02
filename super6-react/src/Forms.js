@@ -31,6 +31,19 @@ class Forms extends Component {
     changeRadio = (newVal) => {
         this.props.parentEvent(newVal.target.value)
     }
+
+    handleClick=(e)=>{
+        e.preventDefault()
+        // console.log("stats"+this.props.value+"Button")
+       let stats = document.getElementById("stats"+this.props.value+"Details")
+
+        if(stats.style.display  =='block'){
+            stats.style.display  ='none'
+        } else{
+            stats.style.display  ='block'
+        }
+    }
+
     render() {
         console.log(this.state.maxSets)
 
@@ -54,11 +67,10 @@ class Forms extends Component {
                     </div>
 
                     <div className="stats">
-                        <button id="stats1Button">Stats</button>
-                        <ul className="statDetails" id="stats1Details">
-                            <li>Stat1</li>
-                            <li>Stat2</li>
-                            <li>Stat3</li>
+                        <button id={"stats"+this.props.value+"Button"} onClick={this.handleClick}>Stats</button>
+                        <ul className="statDetails" id={"stats"+this.props.value+"Details"}>
+                            <li>{this.props.data.Stats1}</li>
+                            <li>{this.props.data.Stats2}</li>
                         </ul>
                     </div>
                 </section>
