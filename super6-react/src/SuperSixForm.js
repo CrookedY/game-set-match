@@ -10,8 +10,59 @@ class SuperSixForm extends Component {
     constructor() {
         super();
         this.state = {
-          radioChecked: 'radio1'
+          radioChecked: 'radio1',
+          data: [
+            {
+                "GameID": 1,
+                "PlayerHome": "Roger FedererTest",
+                "PlayerAway":"Rafael NadalTest",
+                "Gender":"M"
+            },
+            {
+                "GameID": 2,
+                "PlayerHome": "Novak DjokovicTest",
+                "PlayerAway":"Andy MurrayTest",
+                "Gender":"M"
+            },
+            
+            {
+                "GameID": 3,
+                "PlayerHome": "Andre AgassiTest",
+                "PlayerAway":"Pete SamprasTest",
+                "Gender":"M"
+            },
+            
+            {
+                "GameID": 4,
+                "PlayerHome": "Serena WilliamsTest",
+                "PlayerAway":"Simona HalepTest",
+                "Gender":"F"
+            },
+            
+            {
+                "GameID": 5,
+                "PlayerHome": "Caroline WozniackiTest",
+                "PlayerAway":"Angelique KerberTest",
+                "Gender":"F"
+            },
+            
+            {
+                "GameID": 6,
+                "PlayerHome": "Stefi Graff",
+                "PlayerAway":"Billie-Jean King",
+                "Gender":"F"
+            }
+            
+            ]
         }
+      }
+      componentDidMount(){
+        fetch("/api/getPlayers")
+        .then(response => response.json())
+        .then(playerData => {
+          this.setState({data: playerData})
+        }) 
+       
       }
 
       handleOptionChange = (newRadio) => {
@@ -35,20 +86,22 @@ class SuperSixForm extends Component {
     
 
     render() {
+      console.log(this.state.data)
+      console.log(this.state.data[0].PlayerHome)
         return (
         <div>
         <Container>
         <Row>
           <Col md={12} lg={6}>
-            <Forms value={1} checked={this.state.radioChecked} parentEvent={this.handleOptionChange} />
-            <Forms value={2} checked={this.state.radioChecked} parentEvent={this.handleOptionChange} />
-            <Forms value={3} checked={this.state.radioChecked} parentEvent={this.handleOptionChange} />
+            <Forms value={1} data={this.state.data[0]} checked={this.state.radioChecked} parentEvent={this.handleOptionChange} />
+            <Forms value={2} data={this.state.data[1]} checked={this.state.radioChecked} parentEvent={this.handleOptionChange} />
+            <Forms value={3} data={this.state.data[2]} checked={this.state.radioChecked} parentEvent={this.handleOptionChange} />
           </Col>
           
           <Col md={12} lg={6}>
-            <Forms value={4} checked={this.state.radioChecked} parentEvent={this.handleOptionChange} />
-            <Forms value={5} checked={this.state.radioChecked} parentEvent={this.handleOptionChange} />
-            <Forms value={6} checked={this.state.radioChecked} parentEvent={this.handleOptionChange} />
+            <Forms value={4} data={this.state.data[3]} checked={this.state.radioChecked} parentEvent={this.handleOptionChange} />
+            <Forms value={5} data={this.state.data[4]} checked={this.state.radioChecked} parentEvent={this.handleOptionChange} />
+            <Forms value={6} data={this.state.data[5]} checked={this.state.radioChecked} parentEvent={this.handleOptionChange} />
           </Col>
         </Row>
       </Container>

@@ -23,9 +23,11 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      radioChecked: 'radio1'
+      radioChecked: 'radio1',
+      data: ''
     }
   }
+  
 
   handleOptionChange = (newRadio) => {
     this.setState({ radioChecked: newRadio })
