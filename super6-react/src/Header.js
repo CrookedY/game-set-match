@@ -26,7 +26,7 @@ class Header extends Component {
                                 <li className="active"><a href="/">Play Super 6</a></li>
                                 <li><a href="/Leaderboard">Leaderboard</a></li>
                                 <li><a href="">Results</a></li>
-                                <li><a href="">Feedback</a></li>
+                                <li><a href="/Feedback">Feedback</a></li>
                                 <li className="searchItem"><form action="">Search:<input type="search" placeholder="Search"></input></form></li>
                             </ul>
                         </nav>
