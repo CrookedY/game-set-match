@@ -3,41 +3,53 @@
     "GameID": 1,
     "PlayerHome": "Roger Federer",
     "PlayerAway":"Rafael Nadal",
-    "Gender":"M"
+    "Gender":"M",
+    "Stats1": "Roger Federer has won 20 Grand Slam Tournaments",
+    "Stats2": "Rafael Nadal has an asteroid named after him"
 },
 {
     "GameID": 2,
     "PlayerHome": "Novak Djokovic",
     "PlayerAway":"Andy Murray",
-    "Gender":"M"
+    "Gender":"M",
+    "Stats1": "Novak Djokovic was trained by Monica Seles",
+    "Stats2": "Andy Murray was trained by his Mum"
 },
 
 {
     "GameID": 3,
     "PlayerHome": "Andre Agassi",
     "PlayerAway":"Pete Sampras",
-    "Gender":"M"
+    "Gender":"M",
+    "Stats1": "Andre Agassi had potentially the best sporting mullet of all time",
+    "Stats2": "Pete Sampras has been likened to big foot"
 },
 
 {
     "GameID": 4,
     "PlayerHome": "Serena Williams",
     "PlayerAway":"Simona Halep",
-    "Gender":"F"
+    "Gender":"F",
+    "Stats1": "Serena Williams has won more Grand Slams than any other man or woman in the Open Era",
+    "Stats2": "Simona Halep is the highest-ranking Romanian in WTA history"
 },
 
 {
     "GameID": 5,
     "PlayerHome": "Caroline Wozniacki",
     "PlayerAway":"Angelique Kerber",
-    "Gender":"F"
+    "Gender":"F",
+    "Stats1": "Caroline Wozniacki is not related to Steve Wozniack - there's an extra 'i'",
+    "Stats2": "Kerber was the first German woman to win at Wimbledon for more than 20 years"
 },
 
 {
     "GameID": 6,
-    "PlayerHome": "Stefi Graff",
+    "PlayerHome": "Steffi Graf",
     "PlayerAway":"Billie-Jean King",
-    "Gender":"F"
+    "Gender":"F",
+    "Stats1": "Steffi Graf won all Grand Slams and an Olympic Gold medal in the same year",
+    "Stats2": "BJK won 39 Grand Slams over all formats"
 }
 
 ]

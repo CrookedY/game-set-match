@@ -1,9 +1,9 @@
 (function(){
-    var stats = document.getElementById('stats1Details');
-    var statButton = document.getElementById('stats1Button');
+    var stats1 = document.getElementById('stats1Details');
+    var stat1Button = document.getElementById('stats1Button');
 
-    statButton.addEventListener('click',function(){
-        console.log(stats.style.display)
+    statButton1.addEventListener('click',function(){
+        console.log(stats1.style.display)
         if(stats.style.display  =='block'){
             stats.style.display  ='none'
         } else{
