@@ -3,50 +3,21 @@ import './App.css';
 
 
 class Forms extends Component {
-
-    gameData = [
-        {
-            "GameID": 1,
-            "PlayerHome": "Roger Federer",
-            "PlayerAway": "Rafael Nadal",
-            "Gender": "M"
-        },
-        {
-            "GameID": 2,
-            "PlayerHome": "Novak Djokovic",
-            "PlayerAway": "Andy Murray",
-            "Gender": "M"
-        },
-
-        {
-            "GameID": 3,
-            "PlayerHome": "Andre Agassi",
-            "PlayerAway": "Pete Sampras",
-            "Gender": "M"
-        },
-
-        {
-            "GameID": 4,
-            "PlayerHome": "Serena Williams",
-            "PlayerAway": "Simona Halep",
-            "Gender": "F"
-        },
-
-        {
-            "GameID": 5,
-            "PlayerHome": "Caroline Wozniacki",
-            "PlayerAway": "Angelique Kerber",
-            "Gender": "F"
-        },
-
-        {
-            "GameID": 6,
-            "PlayerHome": "Stefi Graff",
-            "PlayerAway": "Billie-Jean King",
-            "Gender": "F"
+    constructor(){
+        super()
+        this.state = {
+            num1: 0,
+            num2: 0
         }
+    }
 
-    ]
+    onChange1=(e)=>{
+        this.setState({num1: e.target.value})
+    }
+
+    onChange2=(e)=>{
+        this.setState({num2: e.target.value})
+    }
 
     changeRadio = (newVal) => {
         this.props.parentEvent(newVal.target.value)
@@ -61,10 +32,10 @@ class Forms extends Component {
 
                     <div className="matchup">
                         <span className="name" id={"team" + (this.props.value * 2 - 1) + "Name"}>Team {this.props.value * 2 - 1}</span>
-                        <input type="number" className="score" id={"score" + (this.props.value * 2 - 1)} min={0} max={5}></input>
+                        <input type="number" value = {this.state.num1} onChange={this.onChange1}className="score" id={"score" + (this.props.value * 2 - 1)} min={0} max={3-this.state.num2}></input>
                         <label className='showPrediction' id={"showPredictionGame"+(this.props.value)+"_1"}></label>
                         <span className='vs'>Vs</span>
-                        <input type="number" className="score" id={"score" + this.props.value * 2} min={0} max={5}></input>
+                        <input type="number" value = {this.state.num2} onChange={this.onChange2} className="score" id={"score" + this.props.value * 2} min={0} max={3-this.state.num1}></input>
                         <label className='showPrediction' id={"showPredictionGame"+this.props.value+"_2"}></label>
                         <span className="name" id={"team" + this.props.value * 2 + "Name"}>Team {this.props.value * 2}</span>
                         <div>
