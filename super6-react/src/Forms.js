@@ -3,14 +3,23 @@ import './App.css';
 
 
 class Forms extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
             num1: 0,
-            num2: 0
+            num2: 0,
+            gender: this.props.data.Gender,
+            maxSets: 5
         }
     }
 
+    componentDidMount(){
+        if(this.state.gender==="M"){
+            this.setState({maxSets:5})
+        } else {
+            this.setState({maxSets:3})
+        }
+    }
     onChange1=(e)=>{
         this.setState({num1: e.target.value})
     }
@@ -23,21 +32,21 @@ class Forms extends Component {
         this.props.parentEvent(newVal.target.value)
     }
     render() {
+        console.log(this.state.maxSets)
+
         return (
-
-
             <form className="container" id='allGames'>
                 <section className="games" id={"game" + this.props.value}>
                     <div className="gameInfo" id="game1Info">Saturday 8th September 2018, 3:00pm</div>
 
                     <div className="matchup">
-                        <span className="name" id={"team" + (this.props.value * 2 - 1) + "Name"}>Team {this.props.value * 2 - 1}</span>
-                        <input type="number" value = {this.state.num1} onChange={this.onChange1}className="score" id={"score" + (this.props.value * 2 - 1)} min={0} max={3-this.state.num2}></input>
+                        <span className="name" id={"team" + (this.props.value * 2 - 1) + "Name"}>{this.props.data.PlayerHome}</span>
+                        <input type="number" value = {this.state.num1} onChange={this.onChange1}className="score" id={"score" + (this.props.value * 2 - 1)} min={0} max={this.state.maxSets-this.state.num2}></input>
                         <label className='showPrediction' id={"showPredictionGame"+(this.props.value)+"_1"}></label>
                         <span className='vs'>Vs</span>
-                        <input type="number" value = {this.state.num2} onChange={this.onChange2} className="score" id={"score" + this.props.value * 2} min={0} max={3-this.state.num1}></input>
+                        <input type="number" value = {this.state.num2} onChange={this.onChange2} className="score" id={"score" + this.props.value * 2} min={0} max={this.state.maxSets-this.state.num1}></input>
                         <label className='showPrediction' id={"showPredictionGame"+this.props.value+"_2"}></label>
-                        <span className="name" id={"team" + this.props.value * 2 + "Name"}>Team {this.props.value * 2}</span>
+                        <span className="name" id={"team" + this.props.value * 2 + "Name"}>{this.props.data.PlayerAway}</span>
                         <div>
                             <label className="dblLabel">Double</label>
                             <input type="radio" value={"radio" + this.props.value} name="doublePts" id={"game" + this.props.value + "Dbl"} checked={this.props.checked === ("radio" + this.props.value)} onChange={this.changeRadio}></input>
