@@ -3,7 +3,6 @@ import Header from './Header.js'
 import Forms from './Forms.js'
 import {Container, Col, Row } from 'react-grid-system'
 import './App.css';
-import './Feedback.css'
 import './Leaderboardstyles.css';
 
 import './mobile.css';
