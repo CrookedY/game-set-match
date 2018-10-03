@@ -26,6 +26,7 @@ class Header extends Component {
                         <nav>
                             <ul>
                                 <li className="active"><a href="/">Play Super 6</a></li>
+                                <li><a href="/Login">Log In</a></li>
                                 <li><a href="/Leaderboard">Leaderboard</a></li>
                                 <li><a href="">Results</a></li>
                                 <li><a href="/Feedback">Feedback</a></li>

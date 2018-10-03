@@ -15,7 +15,6 @@ import {saveChanges} from './saveChanges.js';
 import Leaderboard from './Leaderboard.js';
 import Main from './Main'
 import SuperSixForm from './SuperSixForm.js'
-// import Login from './Login.js';
 // import {identifyUser} from './identifyUser.js'
 // import LoginControl from './UserGreeting.js'
 

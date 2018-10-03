@@ -3,6 +3,7 @@ var fs = require('fs');
 var path = require ('path')
 var app = express();
 var routes = require('./routes/routes');
+var users = require('./users');
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}))
@@ -48,5 +49,37 @@ app.set('myDb', client.db('gameDataDb'));
 
     })
 })*/
+
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+
+passport.use(new LocalStrategy(
+    function(username, password, done) {
+        users.lookup(username, password, function (err, user) {
+            if (err) { return done(err); }
+            done(null, user);
+        });
+    }
+));
+
+passport.deserializeUser(function(id, cb) {
+    users.get(id, cb);
+});
+
+passport.serializeUser(function(user, cb) {
+    cb(null, user.id);
+});
+
+app.use(require('cookie-parser')());
+app.use(require('body-parser').urlencoded({ extended: true }));
+app.use(require('express-session')({ secret: 'super6-app', resave: false, saveUninitialized: false }));
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.post('/api/login', 
+  passport.authenticate('local'),
+  function(req, res) {
+    res.send(req.user);
+});
 
 app.listen(3000)
