@@ -1,3 +1,6 @@
+// Displays the games available to bet on by taking them from mongodb and also display available buttons
+
+
 import React, { Component } from 'react';
 import './App.css';
 import {Container, Col, Row } from 'react-grid-system'

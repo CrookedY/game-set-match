@@ -1,3 +1,5 @@
+// Main React Applications
+
 import React, { Component } from 'react';
 import Header from './Header.js'
 import Forms from './Forms.js'
@@ -33,17 +35,17 @@ class App extends Component {
     this.setState({ radioChecked: newRadio })
   }
 
-// handleUserID(){
-//   identifyUser()
-// }
+// Handles Submit Button
 handleSubmit(){
   sendScores()
 }
 
+// Handles Edit Button
 handleEdit(){
   editScores()
 }
 
+// Works after edit button to save changes
 handleChanges(){
   saveChanges()
 }

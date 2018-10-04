@@ -1,3 +1,5 @@
+// React Component to create a desktop and mobile menu
+
 import React, { Component } from 'react';
 import './App.css';
 
