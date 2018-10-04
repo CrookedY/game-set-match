@@ -73,14 +73,6 @@ class Forms extends Component {
                         </div>
                     </div>
 
-                    <div className="stats">
-                        <button id="stats1Button">Stats</button>
-                        <ul className="statDetails" id="stats1Details">
-                            <li>Stat1</li>
-                            <li>Stat2</li>
-                            <li>Stat3</li>
-                        </ul>
-                    </div>
                 </section>
             </form>
 
