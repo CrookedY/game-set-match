@@ -4,6 +4,10 @@
 	/* 1366x768	16:9*/
 	margin:auto;
 }
+.mobH1{
+    display:none;
+}
+
 .container2{
     width: 100%;
     margin: auto;
@@ -72,7 +76,7 @@
     top: 20px;
     left: 120px;
     font-family: 'Times New Roman', Times, serif;
-    position: fixed;
+    position: relative;
     background-color:transparent;
 
 }
