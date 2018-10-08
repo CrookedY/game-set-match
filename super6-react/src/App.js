@@ -1,3 +1,5 @@
+// Main React Applications
+
 import React, { Component } from 'react';
 import Header from './Header.js'
 import Forms from './Forms.js'
@@ -11,7 +13,6 @@ import {saveChanges} from './saveChanges.js';
 import Leaderboard from './Leaderboard.js';
 import Main from './Main'
 import SuperSixForm from './SuperSixForm.js'
-// import Login from './Login.js';
 // import {identifyUser} from './identifyUser.js'
 // import LoginControl from './UserGreeting.js'
 
@@ -21,25 +22,27 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      radioChecked: 'radio1'
+      radioChecked: 'radio1',
+      data: ''
     }
   }
+  
 
   handleOptionChange = (newRadio) => {
     this.setState({ radioChecked: newRadio })
   }
 
-// handleUserID(){
-//   identifyUser()
-// }
+// Handles Submit Button
 handleSubmit(){
   sendScores()
 }
 
+// Handles Edit Button
 handleEdit(){
   editScores()
 }
 
+// Works after edit button to save changes
 handleChanges(){
   saveChanges()
 }

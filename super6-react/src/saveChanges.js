@@ -1,3 +1,6 @@
+// A function that handles saving of user predictions' changes
+
+
 export const saveChanges = function () {
 
     //used to hide the submit button after clicked
@@ -61,6 +64,8 @@ export const saveChanges = function () {
             .then(function (myData) {
                 console.log('heres my data')
                 console.log(myData)
+
+                // Picks the last corresponding record of the database and displays it to the user
                 document.getElementById('showPredictionGame1_1').innerHTML = myData[myData.length - 1].game1H
                 document.getElementById('showPredictionGame1_2').innerHTML = myData[myData.length - 1].game1A
     

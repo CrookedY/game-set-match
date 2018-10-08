@@ -2,6 +2,17 @@ var express = require("express");
 var router = express.Router();
 var myControllers = require('../controller/controller.js')
 
+function requireAuthentication(req, res, next) {
+    console.log(req.user);
+    if (req.isAuthenticated()) {
+        return next();
+    }
+
+    res.status(401).send({
+        message: 'You must be logged in'
+    });
+}
+
 
 router = function(app){
   
@@ -15,21 +26,17 @@ router = function(app){
     app.route('/Leaderboard')
     .get((req,res)=>{myControllers.getScores(app,req,res);})
 
-    
-    app.route('/api/getPredictions')
-    .get((req,res)=>{myControllers.viewPredictions(app,req,res);})
 
-    
     app.route('/api/predictions')
-    .post((req,res)=>{myControllers.addPredictions(app,req,res);})
+    .post(requireAuthentication, (req,res)=>{myControllers.addPredictions(app,req,res);})
 
     app.route('/api/getPredictions')
-    .get((req,res)=>{myControllers.viewpredictions(app,req,res);})
+    .get(requireAuthentication, (req,res)=>{myControllers.viewpredictions(app,req,res);})
 
     app.route('/api/editPredictions')
-    .put((req,res)=>{myControllers.editPredictions(app,req,res);})
+    .put(requireAuthentication, (req,res)=>{myControllers.editPredictions(app,req,res);})
 
-    
+
     app.route("/api/editScores")
     .put(function(req, res){myControllers.editScores(app,req,res);})
 

@@ -1,3 +1,5 @@
+// A component to create a leaderboard
+
 import React, { Component } from 'react';
 import './App.css';
 
