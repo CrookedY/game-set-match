@@ -7,7 +7,7 @@ class Login extends Component {
         this.handleLoginClick = this.handleLoginClick.bind(this);
         this.state = {isLoggedIn: false};
       }
-    
+
       handleLoginClick() {
         fetch('/api/login', {
             method: 'post',
@@ -21,13 +21,14 @@ class Login extends Component {
         }).then(function (response) {
             if (response.ok) {
                 this.state = {isLoggedIn: true, user: response.json()};
+                window.location.href = '/';
                 // todo pass context to application
             } else {
                 // invalid login
             }
         }.bind(this));
       }
-      
+
       render() {
         return(
             <div>
