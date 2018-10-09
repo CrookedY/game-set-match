@@ -1,7 +1,8 @@
 // A function to handle the submit button/ Writes in mongodb under each userID
 
 export const sendScores = function () {
-
+    
+    console.log(window.random)
     //used to hide the submit button after clicked
     document.getElementById('submit').style.visibility = 'hidden'
 

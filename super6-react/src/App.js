@@ -6,7 +6,7 @@ import Forms from './Forms.js'
 import {Container, Col, Row } from 'react-grid-system'
 import './App.css';
 import './Leaderboardstyles.css';
-
+import './Login.js'
 import './mobile.css';
 
 import {sendScores} from './sendScores.js';

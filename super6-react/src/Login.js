@@ -5,6 +5,41 @@ import './App.css';
 class Login extends Component {
     constructor(props) {
         super(props);
+
+      }
+
+
+        this.handleLoginClick = this.handleLoginClick.bind(this);
+        this.state = {isLoggedIn: false, 
+                      user: ""  
+        };
+      }
+     
+      componentDidUpdate(){
+          random = this.state.user
+      }
+
+      handleLoginClick() {
+       
+        fetch('/api/login', {
+            method: 'post',
+            body: JSON.stringify({
+                username: document.getElementById('username').value,
+                password: document.getElementById('password').value
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(function (response) {
+            if (response.ok) {
+                this.state = {isLoggedIn: true, user: response.json()};
+                window.location.href = '/';
+                // todo pass context to application
+            } else {
+                // invalid login
+                window.location.href = '/login'
+            }
+        }.bind(this));
       }
 
 
