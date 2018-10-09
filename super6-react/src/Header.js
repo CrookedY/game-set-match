@@ -4,7 +4,14 @@ import React, { Component } from 'react';
 import './App.css';
 
 class Header extends Component {
+    constructor(props){
+        super(props)
+    }
+    
+    
+
     render() {
+        console.log(this.props)
         return (
             <div className="header">
                 <header>
@@ -26,7 +33,7 @@ class Header extends Component {
                         <nav>
                             <ul>
                                 <li className="active"><a href="/">Play Super 6</a></li>
-                                <li><a href="/Login">Log In</a></li>
+                                <li><a href="/Login" id='loginHeader'>{this.props.loginHeaderMsg}</a></li>
                                 <li><a href="/Leaderboard">Leaderboard</a></li>
                                 <li><a href="">Results</a></li>
                                 <li><a href="/Feedback">Feedback</a></li>

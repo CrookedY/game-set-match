@@ -22,16 +22,54 @@ import { renderInitial } from './renderInitial';
 
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    
+    this.handleLoginClick = this.handleLoginClick.bind(this);
+
     this.state = {
       radioChecked: 'radio1',
-      data: ''
+      data: '',
+      isLoggedIn: false,
+      loginHeaderMsg: 'Log In',
+      user: ''
     }
+    
   }
   
   componentDidMount(){
     renderInitial()
+  }
+
+ 
+  handleLoginClick() {
+
+    fetch('/api/login', {
+        method: 'post',
+        body: JSON.stringify({
+            username: document.getElementById('username').value,
+            password: document.getElementById('password').value
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(function (response) {
+        if (response.ok) {
+            this.setState({
+              isLoggedIn: true, 
+              user: response.json(),
+              loginHeaderMsg: "Log Out"
+            });
+            
+            
+            window.location.href = '/';
+            // random = response.json().id
+            // todo pass context to application
+        } else {
+            // invalid login
+            window.location.href = '/login'
+        }
+    });
   }
 
   handleOptionChange = (newRadio) => {
@@ -55,13 +93,13 @@ handleChanges(){
 
   render() {
 
-
+    console.log(this.state.loginHeaderMsg)
 
     return (
       <div className="App">
-        <Header />
+        <Header loginHeaderMsg = {this.state.loginHeaderMsg}/>
 
-            <Main/>
+            <Main handleLoginClick = {this.handleLoginClick} isLoggedIn={this.state.isLoggedIn}/>
 
       </div>
 
