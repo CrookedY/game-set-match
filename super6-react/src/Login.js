@@ -12,6 +12,9 @@ class Login extends Component {
             <UserContext.Consumer>
             {({isLoggedIn, user, handleLoginClick}) => (
             <div>
+                {isLoggedIn ?
+                <p>You are already logged in</p>
+                :
                 <form>
                     <label>UserID:</label>
                     <input type="text" placeholder="User name" name="username" id="username"/>
@@ -19,6 +22,7 @@ class Login extends Component {
                     <input type="password" placeholder="Password" name="password" id="password"/>
                     <button type="button" onClick={handleLoginClick}>Login</button>
                 </form>
+                }
             </div>
             )}
             </UserContext.Consumer>

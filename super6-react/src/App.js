@@ -48,7 +48,7 @@ class App extends Component {
                     isLoggedIn: true,
                     user: user
                   });
-                  this.props.history.push('/');
+                  window.location = '/';
                 }.bind(this));
             } else {
               alert('Your login details were incorrect');
