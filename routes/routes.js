@@ -3,6 +3,7 @@ var router = express.Router();
 var myControllers = require('../controller/controller.js')
 
 function requireAuthentication(req, res, next) {
+    console.log('what is going on???')
     console.log(req.user);
     if (req.isAuthenticated()) {
         return next();
