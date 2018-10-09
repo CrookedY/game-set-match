@@ -83,6 +83,9 @@ module.exports = {
     addPredictions: function(app,req,res){
 
         let newPrediction = req.body
+        let user = req.user.id
+        newPrediction["user"] = user
+        console.log(newPrediction)
 
         app.get('myDb').collection('predictions').insertOne(newPrediction, function (err, docs) {
             if (err) {
