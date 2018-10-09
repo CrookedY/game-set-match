@@ -5,7 +5,7 @@ export const saveChanges = function () {
 
     //used to hide the submit button after clicked
     document.getElementById('saveChanges').style.visibility = 'hidden'
-
+    document.getElementById('editButton').style.visibility = 'visible';
     //used to hide prediction input after submit clicked
     for (let el of document.querySelectorAll('.score')) el.style.visibility = 'hidden';
 
