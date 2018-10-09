@@ -22,39 +22,41 @@ import {UserContext} from './UserContext.js';
 
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
         isLoggedIn: false,
         user: null,
-        handleLoginClick: this.handleLoginClick
+        handleLoginClick: this.handleLoginClick.bind(this)
     };
   }
 
-    handleLoginClick(username, password) {
+    handleLoginClick() {
         fetch('/api/login', {
             method: 'post',
-            body: JSON.stringify({username, password}),
+            body: JSON.stringify({
+                username: document.getElementById('username').value,
+                password: document.getElementById('password').value
+            }),
             headers: {
                 'Content-Type': 'application/json'
             }
         }).then(function (response) {
             if (response.ok) {
-                this.setState({
+                response.json().then(function (user) {
+                  this.setState({
                     isLoggedIn: true,
-                    user: response.json()
-                });
-                window.location.href = '/';
-                // todo pass context to application
+                    user: user
+                  });
+                  this.props.history.push('/');
+                }.bind(this));
             } else {
-                // invalid login
+              alert('Your login details were incorrect');
             }
-        }.bind(this));
+        }.bind(this)).catch(function() {
+            alert('There was a problem logging in');
+        });
     }
-
-  handleOptionChange = (newRadio) => {
-    this.setState({ radioChecked: newRadio })
-  }
 
   // Handles Submit Button
   handleSubmit(){

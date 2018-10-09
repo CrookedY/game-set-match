@@ -5,22 +5,20 @@ import './App.css';
 class Login extends Component {
     constructor(props) {
         super(props);
-        this.handleLoginClick = this.handleLoginClick.bind(this);
-        this.state = {isLoggedIn: false};
       }
 
 
       render() {
         return(
             <UserContext.Consumer>
-            {({isLoggedIn, user, handleLogin}) => (
+            {({isLoggedIn, user, handleLoginClick}) => (
             <div>
                 <form>
                     <label>UserID:</label>
                     <input type="text" placeholder="User name" name="username" id="username"/>
                     <label>User Password:</label>
                     <input type="password" placeholder="Password" name="password" id="password"/>
-                    <button type="button" onClick={handleLogin}>Login</button>
+                    <button type="button" onClick={handleLoginClick}>Login</button>
                 </form>
             </div>
             )}

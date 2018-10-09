@@ -2,10 +2,13 @@
 
 import React, { Component } from 'react';
 import './App.css';
+import { UserContext } from './UserContext';
 
 class Header extends Component {
     render() {
         return (
+            <UserContext.Consumer>
+            {({isLoggedIn, user, handleLoginClick}) => (
             <div className="header">
                 <header>
                     <div className="burgerMenu">
@@ -26,7 +29,7 @@ class Header extends Component {
                         <nav>
                             <ul>
                                 <li className="active"><a href="/">Play Super 6</a></li>
-                                <li><a href="/Login">Log In</a></li>
+                                <li>{ isLoggedIn ? <span>Welcome {user.username}! <a href="/Logout">Log Out</a></span> : <a href="/Login">Log In</a>}</li>
                                 <li><a href="/Leaderboard">Leaderboard</a></li>
                                 <li><a href="">Results</a></li>
                                 <li><a href="/Feedback">Feedback</a></li>
@@ -36,6 +39,8 @@ class Header extends Component {
                     </div>
                 </header>
             </div>
+            )}
+            </UserContext.Consumer>
         );
     }
 }
