@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import {UserContext} from './UserContext.js';
 import './App.css';
-
-var random = "todor"
 
 class Login extends Component {
     constructor(props) {
         super(props);
+
+      }
+
+
         this.handleLoginClick = this.handleLoginClick.bind(this);
         this.state = {isLoggedIn: false, 
                       user: ""  
@@ -31,7 +34,6 @@ class Login extends Component {
             if (response.ok) {
                 this.state = {isLoggedIn: true, user: response.json()};
                 window.location.href = '/';
-                random = response.json().id
                 // todo pass context to application
             } else {
                 // invalid login
@@ -40,17 +42,22 @@ class Login extends Component {
         }.bind(this));
       }
 
+
       render() {
         return(
+            <UserContext.Consumer>
+            {({isLoggedIn, user, handleLoginClick}) => (
             <div>
                 <form>
                     <label>UserID:</label>
                     <input type="text" placeholder="User name" name="username" id="username"/>
                     <label>User Password:</label>
                     <input type="password" placeholder="Password" name="password" id="password"/>
-                    <button type="button" onClick={this.handleLoginClick}>Login</button>
+                    <button type="button" onClick={handleLoginClick}>Login</button>
                 </form>
             </div>
+            )}
+            </UserContext.Consumer>
         )
     }
 }
