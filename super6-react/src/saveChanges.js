@@ -23,7 +23,6 @@ export const saveChanges = function () {
     let game6ScA = document.getElementById('score12').value
 
     let formData = {
-        "user": "user1",
         "game1H": parseInt(game1ScH, 10),
         "game1A": parseInt(game1ScA, 10),
         "game2H": parseInt(game2ScH, 10),
