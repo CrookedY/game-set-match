@@ -15,6 +15,7 @@ import {saveChanges} from './saveChanges.js';
 import Leaderboard from './Leaderboard.js';
 import Main from './Main'
 import SuperSixForm from './SuperSixForm.js'
+import { renderInitial } from './renderInitial';
 // import {identifyUser} from './identifyUser.js'
 // import LoginControl from './UserGreeting.js'
 
@@ -29,6 +30,9 @@ class App extends Component {
     }
   }
   
+  componentDidMount(){
+    renderInitial()
+  }
 
   handleOptionChange = (newRadio) => {
     this.setState({ radioChecked: newRadio })

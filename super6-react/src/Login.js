@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
+
 var random = "todor"
 
 class Login extends Component {
@@ -38,7 +39,9 @@ class Login extends Component {
                 window.location.href = '/login'
             }
         }.bind(this));
-      }
+      
+    
+    }
 
       render() {
         return(

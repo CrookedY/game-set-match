@@ -45,8 +45,7 @@ class Forms extends Component {
     }
 
     render() {
-        console.log(this.state.maxSets)
-
+       
         return (
             <form className="container" id='allGames'>
                 <section className="games" id={"game" + this.props.value}>
