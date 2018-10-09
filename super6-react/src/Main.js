@@ -20,7 +20,7 @@ class Main extends Component {
   return(<main>
       <BrowserRouter>
       <Switch>
-        <Route exact path='/' render={(props)=><SuperSixForm {...props} isLoggedIn={this.props.isLoggedIn}/>}/>
+        <Route exact path='/' component={SuperSixForm}/>
         <Route path='/Login' render={(props)=><Login {...props} handleLoginClick={this.props.handleLoginClick} isLoggedIn={this.props.isLoggedIn}/>}/>
         <Route path='/Leaderboard' component={Leaderboard}/>
         <Route path='/Feedback' component={Feedback}/>

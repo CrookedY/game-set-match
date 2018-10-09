@@ -24,8 +24,6 @@ import { renderInitial } from './renderInitial';
 class App extends Component {
   constructor(props) {
     super(props);
-    
-    this.handleLoginClick = this.handleLoginClick.bind(this);
 
     this.state = {
       radioChecked: 'radio1',
@@ -33,16 +31,29 @@ class App extends Component {
       isLoggedIn: false,
       loginHeaderMsg: 'Log In',
       user: ''
-    }
-    
+    };
+    this.handleLoginClick = this.handleLoginClick.bind(this); 
   }
   
   componentDidMount(){
     renderInitial()
+    const saved_loginHeaderMsg = sessionStorage.getItem("saved_loginHeaderMsg")
+    const saved_isLoggedIn = sessionStorage.getItem("saved_isLoggedIn")
+    const saved_user = sessionStorage.getItem("saved_USER")
+        
+    
+    if(saved_loginHeaderMsg !==null){
+      this.setState({loginHeaderMsg: saved_loginHeaderMsg})
+      this.setState({isLoggedIn: saved_isLoggedIn})
+      this.setState({user: saved_user})
+    }
   }
 
  
   handleLoginClick() {
+
+    const self =this;
+    console.log(self.state)
 
     fetch('/api/login', {
         method: 'post',
@@ -54,21 +65,27 @@ class App extends Component {
             'Content-Type': 'application/json'
         }
     }).then(function (response) {
-        if (response.ok) {
-            this.setState({
+      return response.json();  
+    }).then(function(myJson){
+      
+            window.location.href = '/';
+            console.log(myJson)
+           
+            self.setState({
               isLoggedIn: true, 
-              user: response.json(),
+              user: myJson.username,
               loginHeaderMsg: "Log Out"
             });
             
-            
-            window.location.href = '/';
-            // random = response.json().id
+            sessionStorage.setItem('saved_loginHeaderMsg',self.state.loginHeaderMsg)
+            sessionStorage.setItem('saved_isLoggedIn',self.state.isLoggedIn)
+            sessionStorage.setItem('saved_user',self.state.user)
+
             // todo pass context to application
-        } else {
-            // invalid login
-            window.location.href = '/login'
-        }
+        // } else {
+        //     // invalid login
+        //     window.location.href = '/login'
+        // }
     });
   }
 
@@ -92,7 +109,7 @@ handleChanges(){
 }
 
   render() {
-
+    
     console.log(this.state.loginHeaderMsg)
 
     return (
