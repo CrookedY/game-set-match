@@ -33,6 +33,7 @@ class Header extends Component {
                                 <li className="searchItem"><form action="">Search:<input type="search" placeholder="Search"></input></form></li>
                             </ul>
                         </nav>
+                      
                     </div>
                 </header>
             </div>

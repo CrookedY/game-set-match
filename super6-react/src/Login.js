@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
 
+var random = "todor"
+
 class Login extends Component {
     constructor(props) {
         super(props);
         this.handleLoginClick = this.handleLoginClick.bind(this);
-        this.state = {isLoggedIn: false};
+        this.state = {isLoggedIn: false, 
+                      user: ""  
+        };
+      }
+     
+      componentDidUpdate(){
+          random = this.state.user
       }
 
       handleLoginClick() {
+       
         fetch('/api/login', {
             method: 'post',
             body: JSON.stringify({
@@ -22,9 +31,11 @@ class Login extends Component {
             if (response.ok) {
                 this.state = {isLoggedIn: true, user: response.json()};
                 window.location.href = '/';
+                random = response.json().id
                 // todo pass context to application
             } else {
                 // invalid login
+                window.location.href = '/login'
             }
         }.bind(this));
       }

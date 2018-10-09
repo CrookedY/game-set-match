@@ -28,10 +28,12 @@ router = function(app){
 
 
     app.route('/api/predictions')
-    .post(requireAuthentication, (req,res)=>{myControllers.addPredictions(app,req,res);})
+    .post(/*requireAuthentication,*/function(req,res)/*=>*/{myControllers.addPredictions(app,req,res);})
+    .post(requireAuthentication,(req,res)=>{myControllers.addPredictions(app,req,res);})
 
     app.route('/api/getPredictions')
-    .get(requireAuthentication, (req,res)=>{myControllers.viewpredictions(app,req,res);})
+    // .get(/*requireAuthentication,*/ function(req,res)/*=>*/{myControllers.viewpredictions(app,req,res);})
+    .get(requireAuthentication, (req,res)=>{myControllers.viewPredictions(app,req,res);})
 
     app.route('/api/editPredictions')
     .put(requireAuthentication, (req,res)=>{myControllers.editPredictions(app,req,res);})
