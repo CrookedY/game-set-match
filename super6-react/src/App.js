@@ -74,7 +74,6 @@ class App extends Component {
     }).then(function (myJson) {
 
       window.location.href = '/';
-      console.log(myJson)
 
       self.setState({
         isLoggedIn: true,
