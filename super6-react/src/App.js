@@ -37,12 +37,16 @@ class App extends Component {
   }
 
   componentDidMount() {
+    //renders submitted scores if user was logged in, will be blank if not
     renderInitial()
+
+    //looks for whether the member is logged in via sessionStorage.
+    //sessionStorage was needed as state wasn't persisted via different routes.
     const saved_loginHeaderMsg = sessionStorage.getItem("saved_loginHeaderMsg")
     const saved_isLoggedIn = sessionStorage.getItem("saved_isLoggedIn")
     const saved_user = sessionStorage.getItem("saved_USER")
 
-
+    //if user is logged in, then we set the state of the app to be loggedIn. 
     if (saved_loginHeaderMsg !== null) {
       this.setState({ loginHeaderMsg: saved_loginHeaderMsg })
       this.setState({ isLoggedIn: saved_isLoggedIn })
@@ -52,7 +56,8 @@ class App extends Component {
 
 
   handleLoginClick() {
-
+    //needed to set self = this as calling this.setState with the '.then' method meant
+    //that 'this' wasn't picking up the correct object.
     const self = this;
 
     fetch('/api/login', {
@@ -77,20 +82,16 @@ class App extends Component {
         loginHeaderMsg: "Log Out"
       });
 
+      //sets sesstionStorage to be logged in.
       sessionStorage.setItem('saved_loginHeaderMsg', self.state.loginHeaderMsg)
       sessionStorage.setItem('saved_isLoggedIn', self.state.isLoggedIn)
       sessionStorage.setItem('saved_user', self.state.user)
 
-      // todo pass context to application
-      // } else {
-      //     // invalid login
-      //     window.location.href = '/login'
-      // }
     });
   }
 
   handleLogout() {
-
+    //sets state to be logged out. NB - needed to be a string rather than Boolean as setState changed it to be a string!
     if (this.state.isLoggedIn === 'true') {
       this.setState({
         isLoggedIn: false,
@@ -98,13 +99,26 @@ class App extends Component {
         user: ''
       })
 
+      //sets session state to be blank
       sessionStorage.setItem('saved_loginHeaderMsg', 'Log In')
       sessionStorage.setItem('saved_isLoggedIn', false)
       sessionStorage.setItem('saved_user', '')
 
-      renderInitial()
-
+      //logs the user out. The endpoint is in app.js (rather than routes!)
+      fetch('/api/logout', {
+        method: 'get',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (response) {
+        console.log(response.json())
+        return response.json()
+      })
+    //rerenders users scores - should be blank as we're logged out!
+    renderInitial()
     }
+
+    
   }
   handleOptionChange = (newRadio) => {
     this.setState({ radioChecked: newRadio })

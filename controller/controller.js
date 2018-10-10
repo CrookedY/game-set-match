@@ -39,6 +39,7 @@ module.exports = {
 
     viewPredictions: function(app,req,res){
         let user = req.user.id
+        console.log(user)
         app.get('myDb').collection('predictions').find({"user":user}).toArray(function (err, docs) {
 
             if (err) {

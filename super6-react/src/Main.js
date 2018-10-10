@@ -17,11 +17,19 @@ class Main extends Component {
     
 
   render(){
+    let logPath = ''
+    console.log(typeof(this.props.isLoggedIn))
+    console.log(this.props.isLoggedIn)
+    if(this.props.isLoggedIn=='true'){
+      logPath='/Logout'
+    } else {
+      logPath='Login'
+    }
   return(<main>
       <BrowserRouter>
       <Switch>
         <Route exact path='/' component={SuperSixForm}/>
-        <Route path='/Login' render={(props)=><Login {...props} handleLoginClick={this.props.handleLoginClick} isLoggedIn={this.props.isLoggedIn}/>}/>
+        <Route path={this.logPath} render={(props)=><Login {...props} handleLoginClick={this.props.handleLoginClick} isLoggedIn={this.props.isLoggedIn}/>}/>
         <Route path='/Leaderboard' component={Leaderboard}/>
         <Route path='/Feedback' component={Feedback}/>
       </Switch>

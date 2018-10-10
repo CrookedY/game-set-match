@@ -83,4 +83,10 @@ app.post('/api/login',
     res.send(req.user);
 });
 
+app.get('/api/logout', function(req, res){
+    console.log('hello from logout')
+    req.logout();
+    res.redirect('/Login');
+  });
+
 app.listen(3000)
