@@ -57,13 +57,11 @@ export const sendScores = function () {
         method: 'get',
     })
     .then(function (response) {
-        console.log('first promise')
         return response.json()
         
     })
         .then(function (myData) {
-            console.log('second promise')
-            console.log(myData)
+           
             document.getElementById('showPredictionGame1_1').innerHTML = myData[myData.length - 1].game1H
             document.getElementById('showPredictionGame1_2').innerHTML = myData[myData.length - 1].game1A
 

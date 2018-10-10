@@ -14,12 +14,39 @@ class Forms extends Component {
     }
 
     componentDidMount(){
+        
+        //making call to the DB to retrieve our score state, otherwise the original state of 0 will always render
+        let self = this
+        let gameID = self.props.data.GameID
+        
+        let homeID = "game"+gameID+"H"
+        let awayID = "game"+gameID+"A"
+
+
         if(this.state.gender==="M"){
             this.setState({maxSets:5})
         } else {
             this.setState({maxSets:3})
         }
+
+        //DB call to get our scores from DB and then set them to our state
+        fetch('/api/getPredictions', {
+            method: 'get',
+        })
+        .then(function (response) {
+            return response.json()
+            
+        })
+            .then(function (myData) {
+                
+                self.setState({
+                    num1: myData[0].homeID,
+                    num2: myData[0].awayID
+                })
+        })
     }
+
+
     onChange1=(e)=>{
         this.setState({num1: e.target.value})
     }

@@ -17,9 +17,9 @@ class Main extends Component {
     
 
   render(){
+    //sets the path dependent on your logged in status. 
+    //If we're logged in we want to send to logout and vice versa
     let logPath = ''
-    console.log(typeof(this.props.isLoggedIn))
-    console.log(this.props.isLoggedIn)
     if(this.props.isLoggedIn=='true'){
       logPath='/Logout'
     } else {

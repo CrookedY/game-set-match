@@ -36,7 +36,7 @@ export const saveChanges = function () {
         "game6H": parseInt(game6ScH, 10),
         "game6A": parseInt(game6ScA, 10)
     }
-    console.log(formData)
+    
 
     let endPoint = "/api/editPredictions";
 
@@ -57,12 +57,10 @@ export const saveChanges = function () {
             method: 'get',
         })
         .then(function (response) {
-            console.log('heres my first promise data')
+            
             return response.json()
         })
             .then(function (myData) {
-                console.log('heres my data')
-                console.log(myData)
 
                 // Picks the last corresponding record of the database and displays it to the user
                 document.getElementById('showPredictionGame1_1').innerHTML = myData[myData.length - 1].game1H
