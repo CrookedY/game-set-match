@@ -84,9 +84,11 @@ app.post('/api/login',
 });
 
 app.get('/api/logout', function(req, res){
-    console.log('hello from logout')
     req.logout();
-    res.redirect('/Login');
+    res.clearCookie('connect.sid', {path: '/'});
+    req.session.destroy(function () {
+        res.redirect('/Login');
+    });
   });
 
 app.listen(3000)
