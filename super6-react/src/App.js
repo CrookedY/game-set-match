@@ -39,7 +39,7 @@ class App extends Component {
 
   componentDidMount() {
     //renders submitted scores if user was logged in, will be blank if not
-    console.log('am i rendered here?')
+    
     renderInitial()
 
     //looks for whether the member is logged in via sessionStorage.
@@ -75,6 +75,7 @@ class App extends Component {
       if(response.ok){
       return response.json();
       }
+      alert('Your login details were incorrect, please try again')
       return Promise.reject("Not logged in");
 
     }).then(function (myJson) {
