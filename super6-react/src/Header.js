@@ -3,12 +3,16 @@
 import React, { Component } from 'react';
 import './App.css';
 import {Link} from 'react-router-dom';
+import { UserContext } from './UserContext';
+
 class Header extends Component {
     
 
     render() {
         
         return (
+            <UserContext.Consumer>
+            {({isLoggedIn, user, handleLoginClick}) => (
             <div className="header">
                 <header>
                     <div className="burgerMenu">
@@ -34,12 +38,15 @@ class Header extends Component {
                                 <li><Link to="/Results">Results</Link></li>
                                 <li><Link to="/Feedback">Feedback</Link></li>
         
+
                             </ul>
                         </nav>
                       
                     </div>
                 </header>
             </div>
+            )}
+            </UserContext.Consumer>
         );
     }
 }

@@ -13,6 +13,7 @@ import { editScores } from './editScores.js';
 import { saveChanges } from './saveChanges.js';
 import Main from './Main'
 import { renderInitial } from './renderInitial';
+
 // import {identifyUser} from './identifyUser.js'
 // import LoginControl from './UserGreeting.js'
 
@@ -143,6 +144,7 @@ class App extends Component {
   }
 
   // Works after edit button to save changes
+
   handleChanges() {
     saveChanges()
   }
