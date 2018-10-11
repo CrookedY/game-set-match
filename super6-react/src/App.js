@@ -1,6 +1,7 @@
 // Main React Applications
 
 import React, { Component } from 'react';
+import { BrowserRouter} from 'react-router-dom';
 import Header from './Header.js'
 import Forms from './Forms.js'
 import { Container, Col, Row } from 'react-grid-system'
@@ -38,6 +39,7 @@ class App extends Component {
 
   componentDidMount() {
     //renders submitted scores if user was logged in, will be blank if not
+    console.log('am i rendered here?')
     renderInitial()
 
     //looks for whether the member is logged in via sessionStorage.
@@ -139,15 +141,16 @@ class App extends Component {
   }
 
   render() {
-
     return (
+      <BrowserRouter>
       <div className="App">
+        
         <Header loginHeaderMsg={this.state.loginHeaderMsg} handleLogout={this.handleLogout} />
 
         <Main handleLoginClick={this.handleLoginClick} isLoggedIn={this.state.isLoggedIn} />
 
       </div>
-
+      </BrowserRouter>
     );
   }
 }

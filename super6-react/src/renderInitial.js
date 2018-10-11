@@ -5,8 +5,11 @@ export const renderInitial = function (ev) {
         method: 'get',
     })
     .then(function (response) {
-        return response.json()
+        if (response.ok) {
+            return response.json()
+        }
         
+        return Promise.reject("Not logged in");
     })
         .then(function (myData) {
             

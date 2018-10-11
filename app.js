@@ -10,7 +10,7 @@ app.use(express.urlencoded({extended: false}))
 
 // app.use(express.static("./super6_test"));
 // app.use(express.static('views'));
-app.use(express.static("./super6-react/build"));
+// app.use(express.static("./super6-react/build"));
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
