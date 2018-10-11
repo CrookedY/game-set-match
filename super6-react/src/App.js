@@ -72,7 +72,11 @@ class App extends Component {
         'Content-Type': 'application/json'
       }
     }).then(function (response) {
+      if(response.ok){
       return response.json();
+      }
+      return Promise.reject("Not logged in");
+
     }).then(function (myJson) {
 
       window.location.href = '/';

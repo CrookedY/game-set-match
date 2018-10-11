@@ -35,7 +35,7 @@ class Header extends Component {
                                 <li className="active"><Link to="/">Play Super 6</Link></li>
                                 <li><Link to="/Login" id='loginHeader' onClick={this.props.handleLogout}>{this.props.loginHeaderMsg}</Link></li>
                                 <li><Link to="/Leaderboard">Leaderboard</Link></li>
-                                <li><Link to="">Results</Link></li>
+                                <li><Link to="/Results">Results</Link></li>
                                 <li><Link to="/Feedback">Feedback</Link></li>
         
                             </ul>

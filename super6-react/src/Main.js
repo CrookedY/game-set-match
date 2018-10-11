@@ -7,6 +7,7 @@ import Login from './Login.js';
 import Leaderboard from './Leaderboard.js';
 import SuperSixForm from './SuperSixForm.js';
 import Feedback from './Feedback.js'
+import Results from './Results.js'
 
 
 class Main extends Component {
@@ -32,7 +33,7 @@ class Main extends Component {
         <Route path='/Leaderboard' component={Leaderboard}/>
         <Route path={logPath} render={(props)=><Login {...props} handleLoginClick={this.props.handleLoginClick} isLoggedIn={this.props.isLoggedIn}/>}/>
         <Route path='/Feedback' component={Feedback}/>
-
+        <Route path='/Results' component={Results}/>
         <Route exact path='/' component={SuperSixForm}/>
       
       
