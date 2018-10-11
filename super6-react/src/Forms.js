@@ -14,12 +14,40 @@ class Forms extends Component {
     }
 
     componentDidMount(){
+        
+        //making call to the DB to retrieve our score state, otherwise the original state of 0 will always render
+        let self = this
+        
+
+
         if(this.state.gender==="M"){
             this.setState({maxSets:5})
         } else {
             this.setState({maxSets:3})
         }
+
+        //DB call to get our scores from DB and then set them to our state
+        fetch('/api/getPredictions', {
+            method: 'get',
+        })
+        .then(function (response) {
+            if (response.ok) {
+                return response.json()    
+            }
+            return Promise.reject("Not logged in");
+        })
+            .then(function (myData) {
+                
+                if(myData.length!==0){
+                self.setState({
+                    num1: myData[0].homeID,
+                    num2: myData[0].awayID
+                })
+            }
+        })
     }
+
+
     onChange1=(e)=>{
         this.setState({num1: e.target.value})
     }
@@ -34,10 +62,10 @@ class Forms extends Component {
 
     handleClick=(e)=>{
         e.preventDefault()
-        // console.log("stats"+this.props.value+"Button")
+        
        let stats = document.getElementById("stats"+this.props.value+"Details")
 
-        if(stats.style.display  =='block'){
+        if(stats.style.display  ==='block'){
             stats.style.display  ='none'
         } else{
             stats.style.display  ='block'
@@ -45,8 +73,7 @@ class Forms extends Component {
     }
 
     render() {
-        console.log(this.state.maxSets)
-
+       
         return (
             <form className="container" id='allGames'>
                 <section className="games" id={"game" + this.props.value}>

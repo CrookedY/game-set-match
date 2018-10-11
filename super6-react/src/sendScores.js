@@ -2,7 +2,7 @@
 
 export const sendScores = function () {
     
-    console.log(window.random)
+  
     //used to hide the submit button after clicked
     document.getElementById('submit').style.visibility = 'hidden'
 
@@ -24,7 +24,6 @@ export const sendScores = function () {
     let game6ScA = document.getElementById('score12').value
 
     let formData = {
-        "user": "user1",
         "game1H": parseInt(game1ScH, 10),
         "game1A": parseInt(game1ScA, 10),
         "game2H": parseInt(game2ScH, 10),
@@ -49,7 +48,13 @@ export const sendScores = function () {
         }
     })
         .then(function (response) {
+            if(response.ok){
             return response.json()
+            }
+            alert('Please log in');
+            window.location.href = '/Login';
+            return Promise.reject("Not logged in");
+            
         })
 
         document.getElementById('editButton').style.visibility = 'visible';
@@ -58,13 +63,13 @@ export const sendScores = function () {
         method: 'get',
     })
     .then(function (response) {
-        console.log('first promise')
-        return response.json()
-        
+        if(response.ok){
+            return response.json()
+            }
+            return Promise.reject("Not logged in");        
     })
         .then(function (myData) {
-            console.log('second promise')
-            console.log(myData)
+           
             document.getElementById('showPredictionGame1_1').innerHTML = myData[myData.length - 1].game1H
             document.getElementById('showPredictionGame1_2').innerHTML = myData[myData.length - 1].game1A
 

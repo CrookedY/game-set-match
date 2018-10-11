@@ -10,7 +10,7 @@ app.use(express.urlencoded({extended: false}))
 
 // app.use(express.static("./super6_test"));
 // app.use(express.static('views'));
-app.use(express.static("./super6-react/build"));
+// app.use(express.static("./super6-react/build"));
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -82,5 +82,13 @@ app.post('/api/login',
   function(req, res) {
     res.send(req.user);
 });
+
+app.get('/api/logout', function(req, res){
+    req.logout();
+    res.clearCookie('connect.sid', {path: '/'});
+    req.session.destroy(function () {
+        res.redirect('/Login');
+    });
+  });
 
 app.listen(3000)

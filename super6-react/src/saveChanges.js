@@ -5,7 +5,7 @@ export const saveChanges = function () {
 
     //used to hide the submit button after clicked
     document.getElementById('saveChanges').style.visibility = 'hidden'
-
+    document.getElementById('editButton').style.visibility = 'visible';
     //used to hide prediction input after submit clicked
     for (let el of document.querySelectorAll('.score')) el.style.visibility = 'hidden';
 
@@ -23,7 +23,6 @@ export const saveChanges = function () {
     let game6ScA = document.getElementById('score12').value
 
     let formData = {
-        "user": "user1",
         "game1H": parseInt(game1ScH, 10),
         "game1A": parseInt(game1ScA, 10),
         "game2H": parseInt(game2ScH, 10),
@@ -37,7 +36,7 @@ export const saveChanges = function () {
         "game6H": parseInt(game6ScH, 10),
         "game6A": parseInt(game6ScA, 10)
     }
-    console.log(formData)
+    
 
     let endPoint = "/api/editPredictions";
 
@@ -58,12 +57,10 @@ export const saveChanges = function () {
             method: 'get',
         })
         .then(function (response) {
-            console.log('heres my first promise data')
+            
             return response.json()
         })
             .then(function (myData) {
-                console.log('heres my data')
-                console.log(myData)
 
                 // Picks the last corresponding record of the database and displays it to the user
                 document.getElementById('showPredictionGame1_1').innerHTML = myData[myData.length - 1].game1H

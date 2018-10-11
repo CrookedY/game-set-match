@@ -3,11 +3,10 @@ import {UserContext} from './UserContext.js';
 import './App.css';
 
 class Login extends Component {
-    constructor(props) {
-        super(props);
-    }
 
-    render() {
+      render() {
+
+
         return(
             <UserContext.Consumer>
             {({isLoggedIn, user, handleLoginClick}) => (
@@ -20,7 +19,8 @@ class Login extends Component {
                     <input type="text" placeholder="User name" name="username" id="username"/>
                     <label>User Password:</label>
                     <input type="password" placeholder="Password" name="password" id="password"/>
-                    <button type="button" onClick={handleLoginClick}>Login</button>
+                    <button type="button" onClick={this.props.handleLoginClick}>Login</button>
+
                 </form>
                 }
             </div>

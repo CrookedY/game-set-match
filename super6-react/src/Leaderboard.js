@@ -24,7 +24,7 @@ class Leaderboard extends Component {
             return response.json();
         }).then(function(data) {
             self.setState({myData: data});
-            console.log(data)
+            
         }).catch(err => {
         console.log('caught it!',err);
         })

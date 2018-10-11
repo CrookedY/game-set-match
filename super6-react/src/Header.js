@@ -2,10 +2,14 @@
 
 import React, { Component } from 'react';
 import './App.css';
+import {Link} from 'react-router-dom';
 import { UserContext } from './UserContext';
 
 class Header extends Component {
+    
+
     render() {
+        
         return (
             <UserContext.Consumer>
             {({isLoggedIn, user, handleLoginClick}) => (
@@ -28,12 +32,13 @@ class Header extends Component {
                         <h1 className="mobH1">Super6</h1>
                         <nav>
                             <ul>
-                                <li className="active"><a href="/">Play Super 6</a></li>
-                                <li>{ isLoggedIn ? <span>Welcome {user.username}! <a href="/Logout">Log Out</a></span> : <a href="/Login">Log In</a>}</li>
-                                <li><a href="/Leaderboard">Leaderboard</a></li>
-                                <li><a href="">Results</a></li>
-                                <li><a href="/Feedback">Feedback</a></li>
-                                <li className="searchItem"><form action="">Search:<input type="search" placeholder="Search"></input></form></li>
+                                <li className="active"><Link to="/">Play Super 6</Link></li>
+                                <li><Link to="/Login" id='loginHeader' onClick={this.props.handleLogout}>{this.props.loginHeaderMsg}</Link></li>
+                                <li><Link to="/Leaderboard">Leaderboard</Link></li>
+                                <li><Link to="/Results">Results</Link></li>
+                                <li><Link to="/Feedback">Feedback</Link></li>
+        
+
                             </ul>
                         </nav>
                       

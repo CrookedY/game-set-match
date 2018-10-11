@@ -61,9 +61,18 @@ class SuperSixForm extends Component {
       }
       componentDidMount(){
         fetch("/api/getPlayers")
-        .then(response => response.json())
+        .then(function(response){ 
+            
+            if(response.ok){
+
+                return response.json()}
+                return Promise.reject("Not logged in");   
+            })
         .then(playerData => {
+            
+            
           this.setState({data: playerData})
+          
         }) 
        
       }
@@ -89,8 +98,7 @@ class SuperSixForm extends Component {
     
 
     render() {
-      console.log(this.state.data)
-      console.log(this.state.data[0].PlayerHome)
+      
         return (
         <div>
         <Container>

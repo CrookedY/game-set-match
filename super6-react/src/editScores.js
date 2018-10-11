@@ -4,6 +4,7 @@ export const editScores = function () {
 
     for (let el of document.querySelectorAll('.score')) el.style.visibility = 'visible';
     document.getElementById('saveChanges').style.visibility = 'visible';
+    document.getElementById('editButton').style.visibility = 'hidden';
 
     document.getElementById('showPredictionGame1_1').innerHTML = ""
     document.getElementById('showPredictionGame1_2').innerHTML = ""

@@ -38,7 +38,9 @@ module.exports = {
     },
 
     viewPredictions: function(app,req,res){
-        app.get('myDb').collection('predictions').find({}).toArray(function (err, docs) {
+        let user = req.user.id
+        console.log(user)
+        app.get('myDb').collection('predictions').find({"user":user}).toArray(function (err, docs) {
 
             if (err) {
                 console.error(err)
@@ -83,6 +85,9 @@ module.exports = {
     addPredictions: function(app,req,res){
 
         let newPrediction = req.body
+        let user = req.user.id
+        newPrediction["user"] = user
+        
 
         app.get('myDb').collection('predictions').insertOne(newPrediction, function (err, docs) {
             if (err) {
@@ -105,8 +110,10 @@ module.exports = {
 
     editPredictions: function(app,req,res){
         var changePrediction = req.body
+        let user = req.user.id
+        changePrediction["user"] = user
         app.get('myDb').collection('predictions').updateOne(
-            {"user":"user1"},
+            {"user":user},
             {$set: {
                 "game1H": changePrediction.game1H,
                 "game1A": changePrediction.game1A,

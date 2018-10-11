@@ -21,7 +21,6 @@ myForm.addEventListener('submit', function(ev){
     let game6ScA = document.getElementById('score12').value
 
 let formData  = {
-    "user": "user1",
     "game1H":parseInt(game1ScH),
     "game1A":parseInt(game1ScA),
     "game2H":parseInt(game2ScH),
