@@ -23,7 +23,7 @@ class Main extends Component {
     if(this.props.isLoggedIn=='true'){
       logPath='/Logout'
     } else {
-      logPath='Login'
+      logPath='/Login'
     }
   return(<main>
       

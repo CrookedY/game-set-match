@@ -112,8 +112,14 @@ class App extends Component {
           'Content-Type': 'application/json'
         }
       }).then(function (response) {
-        console.log(response.json())
-        return response.json()
+        if (response.ok) {
+          return response.json()
+      }
+      
+      return Promise.reject("Not logged in");
+
+
+        
       })
     //rerenders users scores - should be blank as we're logged out!
     renderInitial()
