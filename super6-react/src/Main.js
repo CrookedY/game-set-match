@@ -1,7 +1,7 @@
 // A React Router
 
 import React, {Component} from 'react'
-import {Switch, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 // import Forms from './Forms.js'
 import Login from './Login.js';
 import Leaderboard from './Leaderboard.js';
@@ -11,10 +11,6 @@ import Results from './Results.js'
 
 
 class Main extends Component {
-    constructor(props){
-      super(props)
-    
-    }
     
 
   render(){
@@ -22,7 +18,7 @@ class Main extends Component {
     //If we're logged in we want to send to logout and vice versa
     
     let logPath = ''
-    if(this.props.isLoggedIn=='true'){
+    if(this.props.isLoggedIn==='true'){
       logPath='/Logout'
     } else {
       logPath='/Login'

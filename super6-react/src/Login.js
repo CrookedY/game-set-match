@@ -1,15 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
-
-var random = "todor"
-
 class Login extends Component {
-    constructor(props) {
-        super(props);
-        
-        
-      }
+
       render() {
 
         return(

@@ -3,8 +3,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter} from 'react-router-dom';
 import Header from './Header.js'
-import Forms from './Forms.js'
-import { Container, Col, Row } from 'react-grid-system'
 import './App.css';
 import './Leaderboardstyles.css';
 import './Login.js'
@@ -13,9 +11,7 @@ import './mobile.css';
 import { sendScores } from './sendScores.js';
 import { editScores } from './editScores.js';
 import { saveChanges } from './saveChanges.js';
-import Leaderboard from './Leaderboard.js';
 import Main from './Main'
-import SuperSixForm from './SuperSixForm.js'
 import { renderInitial } from './renderInitial';
 // import {identifyUser} from './identifyUser.js'
 // import LoginControl from './UserGreeting.js'

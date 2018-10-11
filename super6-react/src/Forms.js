@@ -17,10 +17,7 @@ class Forms extends Component {
         
         //making call to the DB to retrieve our score state, otherwise the original state of 0 will always render
         let self = this
-        let gameID = self.props.data.GameID
         
-        let homeID = "game"+gameID+"H"
-        let awayID = "game"+gameID+"A"
 
 
         if(this.state.gender==="M"){
@@ -66,7 +63,7 @@ class Forms extends Component {
         // console.log("stats"+this.props.value+"Button")
        let stats = document.getElementById("stats"+this.props.value+"Details")
 
-        if(stats.style.display  =='block'){
+        if(stats.style.display  ==='block'){
             stats.style.display  ='none'
         } else{
             stats.style.display  ='block'
