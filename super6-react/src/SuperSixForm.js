@@ -69,10 +69,10 @@ class SuperSixForm extends Component {
                 return Promise.reject("Not logged in");   
             })
         .then(playerData => {
-            console.log(playerData)
+            
             
           this.setState({data: playerData})
-          console.log(this.state.data)
+          
         }) 
        
       }

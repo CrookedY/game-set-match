@@ -2,7 +2,7 @@
 
 export const sendScores = function () {
     
-    console.log(window.random)
+  
     //used to hide the submit button after clicked
     document.getElementById('submit').style.visibility = 'hidden'
 
