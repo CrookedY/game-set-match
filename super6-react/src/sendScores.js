@@ -51,7 +51,10 @@ export const sendScores = function () {
             if(response.ok){
             return response.json()
             }
+            alert('Please log in');
+            window.location.href = '/Login';
             return Promise.reject("Not logged in");
+            
         })
 
         document.getElementById('editButton').style.visibility = 'visible';
