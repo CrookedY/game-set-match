@@ -48,7 +48,10 @@ export const sendScores = function () {
         }
     })
         .then(function (response) {
+            if(response.ok){
             return response.json()
+            }
+            return Promise.reject("Not logged in");
         })
 
         document.getElementById('editButton').style.visibility = 'visible';
@@ -57,8 +60,10 @@ export const sendScores = function () {
         method: 'get',
     })
     .then(function (response) {
-        return response.json()
-        
+        if(response.ok){
+            return response.json()
+            }
+            return Promise.reject("Not logged in");        
     })
         .then(function (myData) {
            

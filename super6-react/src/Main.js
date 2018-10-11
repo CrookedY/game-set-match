@@ -19,6 +19,7 @@ class Main extends Component {
   render(){
     //sets the path dependent on your logged in status. 
     //If we're logged in we want to send to logout and vice versa
+    console.log(this.props)
     let logPath = ''
     if(this.props.isLoggedIn=='true'){
       logPath='/Logout'
@@ -29,8 +30,9 @@ class Main extends Component {
       
       
         <Route path='/Leaderboard' component={Leaderboard}/>
-        <Route path={this.logPath} render={(props)=><Login {...props} handleLoginClick={this.props.handleLoginClick} isLoggedIn={this.props.isLoggedIn}/>}/>
+        <Route path={logPath} render={(props)=><Login {...props} handleLoginClick={this.props.handleLoginClick} isLoggedIn={this.props.isLoggedIn}/>}/>
         <Route path='/Feedback' component={Feedback}/>
+
         <Route exact path='/' component={SuperSixForm}/>
       
       
