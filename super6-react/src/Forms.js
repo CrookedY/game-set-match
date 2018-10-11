@@ -38,10 +38,12 @@ class Forms extends Component {
         })
             .then(function (myData) {
                 
+                if(myData.length!==0){
                 self.setState({
                     num1: myData[0].homeID,
                     num2: myData[0].awayID
                 })
+            }
         })
     }
 
@@ -60,7 +62,7 @@ class Forms extends Component {
 
     handleClick=(e)=>{
         e.preventDefault()
-        // console.log("stats"+this.props.value+"Button")
+        
        let stats = document.getElementById("stats"+this.props.value+"Details")
 
         if(stats.style.display  ==='block'){
